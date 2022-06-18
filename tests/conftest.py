@@ -1,9 +1,9 @@
 import sys
 import pytest
 
-from project_name import create_app
-from project_name.ext.commands import populate_db
-from project_name.ext.database import db
+from confitec_teste import create_app
+from confitec_teste.ext.commands import populate_db
+from confitec_teste.ext.database import db
 
 
 @pytest.fixture(scope="session")
