@@ -59,6 +59,6 @@ Go to:
 ## Roadmap
 
 - [x] - Search Top 10 Musics by artist
-- [] - Save transaction in DyanmoDB
-- [] - Save cache in Redis
-- [] - Write tests
+- [ ] - Save transaction in DyanmoDB
+- [ ] - Save cache in Redis
+- [ ] - Write tests
