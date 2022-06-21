@@ -1,16 +1,13 @@
-from sqlalchemy_serializer import SerializerMixin
-
-from confitec_teste.ext.database import db
+from lyricsgenius import Genius
 
 
-class Product(db.Model, SerializerMixin):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(140))
-    price = db.Column(db.Numeric())
-    description = db.Column(db.Text)
+class Artist:
+    def __init__(self, artist_name: str) -> None:
+        self.artist_name = artist_name
 
+    def top_10_musics(self) -> list:
+        genius = Genius()
+        genius.verbose = False
+        artist = genius.search_artist(self.artist_name, max_songs=10, sort="popularity")
 
-class User(db.Model, SerializerMixin):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(140))
-    password = db.Column(db.String(512))
+        return [song.title for song in artist.songs] if artist else []
