@@ -1,5 +1,9 @@
+boto3
 click
 dynaconf
 flask
+flask_caching
 flask-restful
 lyricsgenius
+python-dotenv
+redis

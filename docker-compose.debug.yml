@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  confitecteste:
+    image: confitecteste3
+    build:
+      context: .
+      dockerfile: ./Containerfile
+    command: ["sh", "-c", "echo aaa; pip install debugpy -t /tmp && echo bbb; python /tmp/debugpy --wait-for-client --listen 0.0.0.0:5678 -m confitec_teste run --no-debugger --no-reload -h 0.0.0.0 --port 5000"]
+    ports:
+      - 5002:5000
+      - 5678:5678
+

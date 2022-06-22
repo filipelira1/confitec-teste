@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  confitecteste:
+    image: confitecteste
+    build:
+      context: .
+      dockerfile: ./Containerfile
+    ports:
+      - 5000:5000
+    env_file: .env
+  redis: 
+    image: redis
+    container_name: redis-container
+    ports:
+      - "6380:6379"    
+
+  dynamodb-local:
+    image: amazon/dynamodb-local:latest
+    container_name: dynamodb-local
+    ports:
+      - "8000:8000"
